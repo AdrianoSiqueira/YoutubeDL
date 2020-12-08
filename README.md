@@ -1,6 +1,6 @@
 # Youtube-DL Interface
 
-It has fully automated operation and can be launched either from the command 
+It has fully automated operation and can be launched either from the command
 line or from the graphical interface.
 
 ### SYNTAX
@@ -32,14 +32,17 @@ more below.
 
 ### TAGS
 
+       [AUDIO] - The links below this tag will have the audio extracted. It only
+                 works for single files.
+
        [CLEAR] - Indicates that the links file should be cleaned. This tag
                  should be in the end to avoid errors.
 
         [HIDE] - The links below this tag will be downloaded to a hidden folder.
-                 Links directly below this tag will be ignored.
+                 Links directly below this tag can not work as expected.
 
       [NORMAL] - The links below this tag will be downloaded to normal video
-                 folder. Links directly below this tag will be ignored.
+                 folder. Links directly below this tag can not work as expected.
 
     [PLAYLIST] - Indicates to download the entire playlist. The files will be
                  placed in a folder with the same name as the playlist. This 
@@ -49,7 +52,7 @@ more below.
 
        [VIDEO] - Indicates to download a single video.
 
-*Tags can be repeated as many times as needed.
+    Tags can be repeated as many times as needed.
 
 ### ERRORS CODE
 
