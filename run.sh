@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Name:     Youtube-DL Interface
-# Version:  5.1.0
-# Date:     2020-12-08
+# Version:  5.1.1
+# Date:     2020-12-09
 
 _MEDIA="media"
 _AUDIO="audio"
@@ -104,7 +104,7 @@ function downloadPlaylist() {
   _link="$2"
 
   local _data
-  mapfile -t _data < <(./youtube-dl --ignore-errors --no-warnings --get-filename --output "[%(playlist_title)s][%(title)s.%(ext)s][https://www.youtube.com/watch?v=%(id)s]" "$_link")
+  mapfile -t _data < <(./youtube-dl --ignore-errors --no-warnings --get-filename --output "[%(playlist_title)s][%(title)s][https://www.youtube.com/watch?v=%(id)s]" "$_link")
 
   for _i in "${_data[@]}"; do
     local _playlistName
@@ -130,7 +130,7 @@ function downloadVideo() {
   _link="$2"
 
   local _name
-  _name="$(./youtube-dl --ignore-errors --no-warnings --no-playlist --get-filename --output "%(title)s.%(ext)s" "$_link")"
+  _name="$(./youtube-dl --ignore-errors --no-warnings --no-playlist --get-filename --output "%(title)s" "$_link")"
   _name="$(echo "$_name" | tr "/" "_")"
 
   download "$_destination" "$_name" "$_link" &
