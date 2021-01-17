@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Name:     Youtube-DL Interface
-# Version:  5.1.1
-# Date:     2020-12-09
+# Version:  5.1.2
+# Date:     2021-01-17
 
 _MEDIA="media"
 _AUDIO="audio"
@@ -49,7 +49,7 @@ function download() {
   log "--info" "Downloading '$_filename' from '$_link'."
   notify "Downloading '$_filename' from '$_link'."
 
-  if ./youtube-dl --quiet --ignore-errors --no-warnings --no-playlist --format "$_format" --output "$_output" --merge-output-format "mkv" "$_link"; then
+  if ./youtube-dl --quiet --ignore-errors --no-warnings --no-playlist --format "$_format" --output "$_output" --merge-output-format "mkv" --retries "infinite" "$_link"; then
     log "--info" "Done '$_filename'."
     notify "Done '$_filename'."
     return 0
